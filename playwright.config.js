@@ -3,6 +3,13 @@ require('dotenv').config();
 
 const config = {
     testDir: 'tests',
+    fullyParallel: true,
+    /* Fail the build on CI if you accidentally left test.only in the source code. */
+    forbidOnly: !!process.env.CI,
+    /* Retry on CI only */
+    retries: process.env.CI ? 2 : 0,
+    /* Opt out of parallel tests on CI. */
+    workers: process.env.CI ? 1 : undefined,
     /* Maximum time test can run for. */
     timeout: 30 * 1000,
     expect: {
