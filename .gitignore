@@ -8,4 +8,4 @@ allure-report
 cucumber-report.html
 state.json
 .idea
-.playwrightTest.config.js
+playwrightTest.config.js
