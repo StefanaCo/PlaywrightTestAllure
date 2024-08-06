@@ -7,7 +7,7 @@ const config = {
     expect: {
         timeout: 5000,
     },
-    reporter: 'html' :: 'allure-playwright',
+    reporter: 'allure-playwright',
     /*Shared settings for all the projects below. See https://playwright.dev/doc */
     use: {
         browserName: 'chromium',
