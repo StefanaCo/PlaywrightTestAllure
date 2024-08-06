@@ -19,7 +19,8 @@ test("Validation of hidden text and popup", async ({page}) => {
 });
 
 test('Screenshot & Visual comparison', async({page}) => {
-    await page.goto(process.env.AUTOMATION_URL);
+    // await page.goto(process.env.AUTOMATION_URL);
+    await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
     await expect(page.locator("#displayed-text")).toBeVisible();
     // await page.locator("#displayed-text").screenshot({path: 'partialScreenshot.png'})
     await page.locator("#hide-textbox").click();

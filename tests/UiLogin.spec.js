@@ -46,7 +46,8 @@ test('@Web Client App login and make an order', async ({ page }) => {
         }
     }
 
-    await expect(page.locator(".user__name [type='text']").first()).toHaveText(process.env.EMAIL);
+    // await expect(page.locator(".user__name [type='text']").first()).toHaveText(process.env.EMAIL);
+    await expect(page.locator(".user__name [type='text']").first()).toHaveText('stefanacatruc@yahoo.com');
     await page.locator(".action__submit").click();
     await expect(page.locator(".hero-primary")).toHaveText(" Thankyou for the order. ");
     const orderId = await page.locator(".em-spacer-1 .ng-star-inserted").textContent();

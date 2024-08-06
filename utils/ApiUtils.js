@@ -5,7 +5,10 @@ class ApiUtils {
     }
 
     async getToken() {
-        const loginResponse = await this.apiContext.post(process.env.LOGIN_URL, {
+        // const loginResponse = await this.apiContext.post(process.env.LOGIN_URL, {
+        //     data: this.loginData
+        // });
+        const loginResponse = await this.apiContext.post('https://rahulshettyacademy.com/api/ecom/auth/login', {
             data: this.loginData
         });
         const loginResponseJson = await loginResponse.json();
@@ -17,7 +20,14 @@ class ApiUtils {
     async createOrder(orderData){
         let response = {};
         response.token = await this.getToken();
-        const orderResponse = await this.apiContext.post(process.env.ORDER_URL, {
+        // const orderResponse = await this.apiContext.post(process.env.ORDER_URL, {
+        //     data: orderData,
+        //     headers: {
+        //         'Authorization' : response.token,
+        //         'Content-Type' : 'application/json'
+        //     }
+        // })
+        const orderResponse = await this.apiContext.post('https://rahulshettyacademy.com/api/ecom/order/create-order', {
             data: orderData,
             headers: {
                 'Authorization' : response.token,
