@@ -1,0 +1,2 @@
+This are the titles:  [ 'ZARA COAT 3', 'ADIDAS ORIGINAL', 'IPHONE 13 PRO' ]
+This is the order id:   | 66b20eb5ae2afd4c0b420a25 | 
