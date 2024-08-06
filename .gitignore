@@ -7,3 +7,4 @@ allure-report
 .env
 cucumber-report.html
 state.json
+.idea
