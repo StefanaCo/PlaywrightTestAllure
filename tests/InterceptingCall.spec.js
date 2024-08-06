@@ -17,7 +17,8 @@ test('Put an order and verify', async ({page}) => {
         window.localStorage.setItem('token', value);
     }, response.token);
 
-    await page.goto(process.env.BASE_URL);
+    // await page.goto(process.env.BASE_URL);
+    await page.goto('https://rahulshettyacademy.com/client');
     await page.route('https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/*', async route => {
         const response = await page.request.fetch(route.request());
         let body = JSON.stringify(fakeOrderData);

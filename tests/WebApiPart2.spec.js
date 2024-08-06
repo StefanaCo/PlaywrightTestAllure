@@ -22,7 +22,8 @@ test('UI login and collect all data', async () => {
     const productName = 'ZARA COAT 3';
 
     const page = await webContext.newPage();
-    await page.goto(process.env.BASE_URL);
+    // await page.goto(process.env.BASE_URL);
+    await page.goto('https://rahulshettyacademy.com/client');
     const products = page.locator(".card-body");
     await page.locator(".card-body b").first().waitFor();
     const titles = await page.locator(".card-body b").allTextContents();
@@ -55,7 +56,8 @@ test('UI login and collect all data', async () => {
         }
     }
 
-    await expect(page.locator(".user__name [type='text']").first()).toHaveText(process.env.EMAIL);
+    // await expect(page.locator(".user__name [type='text']").first()).toHaveText(process.env.EMAIL);
+    await expect(page.locator(".user__name [type='text']").first()).toHaveText('stefanacatruc@yahoo.com');
     await page.locator(".action__submit").click();
     await expect(page.locator(".hero-primary")).toHaveText(" Thankyou for the order. ");
     const orderId = await page.locator(".em-spacer-1 .ng-star-inserted").textContent();
@@ -77,7 +79,8 @@ test('UI login and collect all data', async () => {
 
 test('Login through Ui', async() => {
     const page = await webContext.newPage();
-    await page.goto(process.env.BASE_URL);
+    // await page.goto(process.env.BASE_URL);
+    await page.goto('https://rahulshettyacademy.com/client');
     await page.locator(".card-body b").first().waitFor();
     const titles = await page.locator(".card-body b").allTextContents();
     console.log('This are the titles: ', titles);

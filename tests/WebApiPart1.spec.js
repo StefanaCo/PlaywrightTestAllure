@@ -16,7 +16,8 @@ test('Put an order and verify', async ({page}) => {
         window.localStorage.setItem('token', value);
     }, response.token);
 
-    await page.goto(process.env.BASE_URL);
+    // await page.goto(process.env.BASE_URL);
+    await page.goto('https://rahulshettyacademy.com/client');
     await page.locator("button[routerlink*='myorders']").click();
     await page.locator("tbody").waitFor();
     const rows = await page.locator("tbody tr");
