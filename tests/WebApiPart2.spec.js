@@ -22,8 +22,8 @@ test('UI login and collect all data', async () => {
     const productName = 'ZARA COAT 3';
 
     const page = await webContext.newPage();
-    await page.goto(process.env.BASE_URL);
-    // await page.goto('https://rahulshettyacademy.com/client');
+    // await page.goto(process.env.BASE_URL);
+    await page.goto('https://rahulshettyacademy.com/client');
     const products = page.locator(".card-body");
     await page.locator(".card-body b").first().waitFor();
     const titles = await page.locator(".card-body b").allTextContents();
