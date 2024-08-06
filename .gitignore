@@ -6,6 +6,5 @@ allure-results
 allure-report
 .env
 cucumber-report.html
-state.json
 .idea
 playwrightTest.config.js

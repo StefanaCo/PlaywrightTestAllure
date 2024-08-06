@@ -2,9 +2,12 @@ import {expect, test} from '@playwright/test'
 
 test('Security test request intercept', async ({page}) => {
     //login and reach orders page
-    await page.goto(process.env.BASE_URL);
-    await page.locator("#userEmail").fill(process.env.EMAIL);
-    await page.locator("#userPassword").fill(process.env.PASSWORD);
+    // await page.goto(process.env.BASE_URL);
+    await page.goto('https://rahulshettyacademy.com/client');
+    // await page.locator("#userEmail").fill(process.env.EMAIL);
+    await page.locator("#userEmail").fill('stefanacatruc@yahoo.com');
+    // await page.locator("#userPassword").fill(process.env.PASSWORD);
+    await page.locator("#userPassword").fill('OnlyForTesting234');
     await page.locator("[value='Login']").click();
     await page.waitForLoadState('networkidle');
     await page.locator(".card-body b").first().waitFor();

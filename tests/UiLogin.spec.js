@@ -4,12 +4,15 @@ test('@Web Client App login and make an order', async ({ page }) => {
     const productName = 'ZARA COAT 3';
     const products = page.locator(".card-body");
 
-    await page.goto(process.env.BASE_URL);
+    // await page.goto(process.env.BASE_URL);
+    await page.goto('https://rahulshettyacademy.com/client');
     // await page.route('**/*.{jpg, png, jpeg}', route => route.abort());
     // page.on('request', request => console.log('This is the url: ', request.url()));
     // page.on('response', response => console.log('This are the URL and response status: ', response.url(), response.status()));
-    await page.locator("#userEmail").fill(process.env.EMAIL);
-    await page.locator("#userPassword").fill(process.env.PASSWORD);
+    // await page.locator("#userEmail").fill(process.env.EMAIL);
+    await page.locator("#userEmail").fill('stefanacatruc@yahoo.com');
+    // await page.locator("#userPassword").fill(process.env.PASSWORD);
+    await page.locator("#userPassword").fill('OnlyForTesting234');
     await page.locator("[value='Login']").click();
     await page.waitForLoadState('networkidle');
     await page.locator(".card-body b").first().waitFor();

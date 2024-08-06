@@ -1,7 +1,8 @@
 import {test, expect} from "@playwright/test";
 
 test("Validation of hidden text and popup", async ({page}) => {
-    await page.goto(process.env.AUTOMATION_URL);
+    // await page.goto(process.env.AUTOMATION_URL);
+    await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
     // await page.goto('https://google.com');
     // await page.goBack();
     // await page.goForward();

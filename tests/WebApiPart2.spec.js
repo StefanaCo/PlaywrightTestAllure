@@ -5,9 +5,12 @@ let webContext;
 test.beforeAll(async({browser}) => {
     const context = await browser.newContext();
     const page = await context.newPage();
-    await page.goto(process.env.BASE_URL);
-    await page.locator("#userEmail").fill(process.env.EMAIL);
-    await page.locator("#userPassword").fill(process.env.PASSWORD);
+    // await page.goto(process.env.BASE_URL);
+    await page.goto('https://rahulshettyacademy.com/client');
+    // await page.locator("#userEmail").fill(process.env.EMAIL);
+    await page.locator("#userEmail").fill('stefanacatruc@yahoo.com');
+    // await page.locator("#userPassword").fill(process.env.PASSWORD);
+    await page.locator("#userPassword").fill('OnlyForTesting234');
     await page.locator("[value='Login']").click();
     await page.waitForLoadState('networkidle');
     await context.storageState({path: 'state.json'});
@@ -37,7 +40,7 @@ test('UI login and collect all data', async () => {
     //await page.pause();
 
     await page.locator("div li").first().waitFor();
-    const bool = await page.locator("h3:has-text('zara coat 3')").isVisible();
+    const bool = await page.locator("h3:text('zara coat 3')").isVisible();
     expect(bool).toBeTruthy();
     await page.locator("text=Checkout").click();
     await page.locator("[placeholder*='Country']").pressSequentially("Ind");
