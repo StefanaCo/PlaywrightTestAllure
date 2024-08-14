@@ -1,0 +1,1 @@
+locator('[class="md-heading md-fixedtext"]')

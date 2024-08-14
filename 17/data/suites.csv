@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Aug 14 07:48:19 GMT 2024","Wed Aug 14 07:48:29 GMT 2024","10151","","OCSTest.spec.ts","","","","@OCS Open home page and verify the title",""
